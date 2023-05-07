@@ -19,7 +19,11 @@
 				"name": "next"
 			}
 		],
+		"baseUrl": ".",
 		"paths": {
+			"@/shared/*": ["app/models/shared/*"],
+			"@/components/*": ["app/components/*"],
+			"@/ui/*": ["app/components/ui/*"],
 			"@/*": ["./*"]
 		}
 	},

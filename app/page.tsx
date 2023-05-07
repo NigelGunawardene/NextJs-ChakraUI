@@ -1,12 +1,19 @@
-import styles from './page.module.css';
-import Card from './components/ui/Card';
+// import styles from './page.module.css';
+import MainContainerBox from '@/components/MainContainerBox';
+import Card from '@/ui/Card';
+import { Navbar } from '@/ui/Navbar/Navbar';
+import Toast from '@/components/Toast';
 
 export default function Home() {
 	return (
 		<>
-			<main className={styles.main}>
+			{/* <main className={styles.main}>
+			</main> */}
+			<MainContainerBox>
+				<Navbar />
 				<Card />
-			</main>
+				{/* use the toast component to display a toast here */}
+			</MainContainerBox>
 		</>
 	);
 }
