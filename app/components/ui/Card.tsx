@@ -1,12 +1,16 @@
 'use client';
 import * as chakra from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
+import { useColorModeValue } from '@chakra-ui/react';
 const Card = () => {
+	const cardBodyColor = useColorModeValue('red', 'blue');
+
 	return (
 		<>
 			<chakra.Card>
 				<chakra.CardBody>
-					<Text>View a summary of all your customers over the last month.</Text>
+					<chakra.Text color={cardBodyColor}>
+						View a summary of all your customers over the last month.
+					</chakra.Text>
 				</chakra.CardBody>
 			</chakra.Card>
 		</>

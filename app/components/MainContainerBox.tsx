@@ -9,10 +9,10 @@ const MainContainerBox = ({ children }: Props) => {
 			<Box
 				display={'flex'}
 				flexDirection={'column'}
-				justifyContent={'space-between'}
+				justifyContent={'center'}
 				alignItems={'center'}
-				padding={'6rem'}
-				min-height={'100vh'}>
+				padding={'4rem'}
+				height={'100vh'}>
 				{children}
 			</Box>
 		</>

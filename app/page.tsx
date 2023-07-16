@@ -2,7 +2,6 @@
 import MainContainerBox from '@/components/MainContainerBox';
 import Card from '@/ui/Card';
 import { Navbar } from '@/ui/Navbar/Navbar';
-import Toast from '@/components/Toast';
 
 export default function Home() {
 	return (
@@ -10,6 +9,7 @@ export default function Home() {
 			{/* <main className={styles.main}>
 			</main> */}
 			<MainContainerBox>
+				<p>just some text</p>
 				<Navbar />
 				<Card />
 				{/* use the toast component to display a toast here */}

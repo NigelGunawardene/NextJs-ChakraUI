@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useColorMode, Switch, Flex, Button, IconButton } from '@chakra-ui/react';
+import { useColorMode, Switch, Flex, Button, IconButton, Text } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 
@@ -10,23 +10,32 @@ export const Navbar = () => {
 	const [display, changeDisplay] = useState('none');
 	return (
 		<Flex>
+			<Flex position='fixed' top='1rem' left='1rem' align='center'>
+				<Flex display={['flex']}>
+					<NextLink href='/' passHref>
+						<Button variant='ghost' aria-label='Nigel' my={5} w='100%'>
+							NIGEL
+						</Button>
+					</NextLink>
+				</Flex>
+			</Flex>
 			<Flex position='fixed' top='1rem' right='1rem' align='center'>
 				{/* Desktop */}
 				<Flex display={['none', 'none', 'flex', 'flex']}>
 					<NextLink href='/' passHref>
-						<Button as='a' variant='ghost' aria-label='Home' my={5} w='100%'>
+						<Button variant='ghost' aria-label='Home' my={5} w='100%'>
 							Home
 						</Button>
 					</NextLink>
 
 					<NextLink href='/about' passHref>
-						<Button as='a' variant='ghost' aria-label='About' my={5} w='100%'>
+						<Button variant='ghost' aria-label='About' my={5} w='100%'>
 							About
 						</Button>
 					</NextLink>
 
 					<NextLink href='/contact' passHref>
-						<Button as='a' variant='ghost' aria-label='Contact' my={5} w='100%'>
+						<Button variant='ghost' aria-label='Contact' my={5} w='100%'>
 							Contact
 						</Button>
 					</NextLink>
@@ -40,24 +49,21 @@ export const Navbar = () => {
 					icon={<HamburgerIcon />}
 					onClick={() => changeDisplay('flex')}
 					display={['flex', 'flex', 'none', 'none']}
-					colorScheme='blue'
 				/>
-				<Switch colorScheme='blue' size={'md'} isChecked={isDark} onChange={toggleColorMode} />
+				<Switch size={'md'} isChecked={isDark} onChange={toggleColorMode} />
 			</Flex>
 
 			{/* Mobile Content */}
 			<Flex
 				w='100vw'
 				display={display}
-				bgColor='gray.50'
 				zIndex={20}
 				h='100vh'
 				pos='fixed'
 				top='0'
 				left='0'
 				overflowY='auto'
-				flexDir='column'
-				backgroundColor={'black'}>
+				flexDir='column'>
 				<Flex justify='flex-end'>
 					<IconButton
 						mt={2}
@@ -66,25 +72,24 @@ export const Navbar = () => {
 						size='lg'
 						icon={<CloseIcon />}
 						onClick={() => changeDisplay('none')}
-						colorScheme='blue'
 					/>
 				</Flex>
 
 				<Flex flexDir='column' align='center'>
 					<NextLink href='/' passHref>
-						<Button as='a' variant='ghost' aria-label='Home' my={5} w='100%' colorScheme={'blue'}>
+						<Button variant='ghost' aria-label='Home' my={5} w='100%'>
 							Home
 						</Button>
 					</NextLink>
 
 					<NextLink href='/about' passHref>
-						<Button as='a' variant='ghost' aria-label='About' my={5} w='100%' colorScheme={'blue'}>
+						<Button variant='ghost' aria-label='About' my={5} w='100%'>
 							About
 						</Button>
 					</NextLink>
 
 					<NextLink href='/contact' passHref>
-						<Button as='a' variant='ghost' aria-label='Contact' my={5} w='100%' colorScheme={'blue'}>
+						<Button variant='ghost' aria-label='Contact' my={5} w='100%'>
 							Contact
 						</Button>
 					</NextLink>
